@@ -17,5 +17,17 @@ pipeline {
                 } //script
             } // steps
         } // pre-build stage
+        
+        stage("Mvn build") {
+            steps {
+                script {
+                    """
+                    docker run -it --rm -v ${WORKSPACE}:/workspace -w /workspace -e MAVEN_OPTS=-DskipTests -e myCustomProperty=simple-svc maven /bin/bash -c \
+                    "mvn clean install -DmyCustomProperty=${myCustomProperty} -f /workspace/pom.xml"
+                    """
+                } // script
+            } //steps
+        } // mvn build
+        
     } // stages 
 } // pipeline
