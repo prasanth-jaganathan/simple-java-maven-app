@@ -14,7 +14,7 @@ jobs:
         java-version: '11'
         maven-version: '3.8.1'
         cache: true
-        distribution: true
+        distribution: 'temurin'
 
     - name: Build with Maven
       run: mvn clean install --file pom.xml    
