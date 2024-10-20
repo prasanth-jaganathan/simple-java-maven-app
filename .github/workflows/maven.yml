@@ -26,4 +26,4 @@ jobs:
 
         git-release-bot-name: "release-bot"
         git-release-bot-email: "prasanth.jaganathan98@gmail.com"
-        access-token: ${{ secrets.GITHUB_TOKEN }}
+        access-token: ${{ secrets.GITREPO_ACCESS_TOKEN }}
